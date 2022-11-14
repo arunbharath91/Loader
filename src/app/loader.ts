@@ -4,7 +4,7 @@ interface IOptions {
   mode?: ProgressBarMode;
   container?: string | HTMLElement;
   color?: string;
-  onLoadStateChange?: Function;
+  onLoaderStateChange?: Function;
 }
 
 export type ProgressBarMode = 'determinate' | 'indeterminate' | 'buffer' | 'query';
@@ -39,7 +39,7 @@ export class Loader {
         // If same value is passed, do nothing.
         if (_value === value) return;
         _value = !!value;
-        this.options.onLoadStateChange?.call(this, this.loadingState);
+        this.options.onLoaderStateChange?.call(this, this.loadingState);
         this.container?.setAttribute('progress-loading', this.loadingState.loading.toString());
         this.selector?.setAttribute('progress-loading', this.loadingState.loading.toString());
       }
