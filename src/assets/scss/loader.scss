@@ -1,6 +1,6 @@
 .progress[progress-mode~="indeterminate"][progress-type~="Bar"] {
   width: 100%;
-  height: 8px;
+  height: var(--progress-size, 8px);
   background: #eaeaea;
   position: relative;
   overflow: hidden;
@@ -113,8 +113,8 @@
 
 .progress[progress-mode~="indeterminate"][progress-type~="Circle"] {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: var(--progress-size, 2rem);
+  height: var(--progress-size, 2rem);
   vertical-align: -0.125em;
   border: 0.25em solid var(--progress-color, #ad2d6d);
   border-right-color: transparent;
@@ -129,8 +129,8 @@
 
 .progress[progress-mode~="indeterminate"][progress-type~="Buffer"] {
   display: inline-block;
-  width: 2rem;
-  height: 2rem;
+  width: var(--progress-size, 2rem);
+  height: var(--progress-size, 2rem);
   vertical-align: -0.125em;
   background-color: var(--progress-color, #ad2d6d);
   border-radius: 50%;

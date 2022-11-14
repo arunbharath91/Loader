@@ -9,7 +9,6 @@ interface IOptions {
 
 export type ProgressBarMode = 'determinate' | 'indeterminate' | 'buffer' | 'query';
 const defaultOption: IOptions = {
-  size: 'lg',
   mode: 'indeterminate'
 }
 export interface LoadingState {
@@ -62,9 +61,12 @@ export class Loader {
       this.selector.setAttribute('progress-mode', this.options?.mode || '');
       this.selector.setAttribute('progress-loading', this.loadingState.loading.toString());
       this.selector.setAttribute('progress-type', this.options.type || 'Bar');
+      if (this.options.size) {
+        this.selector.style.cssText = `--progress-size: ${this.options.size}`;
+      }
       if (this.options.color && this.checkValidColor(this.options.color)) {
         this.selector.setAttribute('progress-color', this.options.color);
-        this.selector.style.cssText = `--progress-color: ${this.options.color}`;
+        this.selector.style.cssText += `--progress-color: ${this.options.color};`;
       } else {
         throw new Error('Invalid Color Supplied');
       }
