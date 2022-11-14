@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+  <title>Loader</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="theme-color" content="#2c58ed" />
+  <meta name="description" content="Loader by Arun Bharath" />
+  <meta name="keywords" content="Loader by arun bharath" />
+  <meta name="author" content="Arun Bharath">
+  <link rel="shortcut icon" href="../../assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <pre>
+   <code>
+   configuration :
+   1) supports mutiple instance
+   2) ajax load (or) template load  Ref: loader-config.ts
+   3) if you pass url 'assets/templates/modal.html' it will load using ajax
+   4) if you pass template id 'customer-model' it will load template document to modal
+   5) configuration : new Modal('assets/templates/modal.html', {size: 'lg', onOpen: ()=>{
+       console.log('open');
+     }
+     }}) || new Modal("customer-model", {size: 'lg', })
+   6) onOpen and onClose event support
+   </code>
+   </pre>
+  <hr />
+  <div class="progress-container">
+    <div class="progress-overlay">
+      <div class="progress" id="loader">
+        <div class="bar"></div>
+      </div>
+    </div>
+  </div>
+  <button type="button" onclick="loadStart()">Start</button>
+
+  <button type="button" onclick="loadEnd()">End</button>
+
+  <div class="progress" style="--width: 50%">
+    <div class="bar"></div>
+  </div>
+</body>
+
+</html>
