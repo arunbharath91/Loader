@@ -3,7 +3,7 @@ import { PhotoService } from "./photo.service";
 import './interceptor.service';
 export const loader = new Loader('#loader', {
     type: 'Bar',
-    color: 'blue', onLoadStateChange: (arg: LoadingState) => {
+    color: 'blue', onLoaderStateChange: (arg: LoadingState) => {
         console.log(arg.loading)
     },
     container: '.progress-container'
@@ -11,7 +11,7 @@ export const loader = new Loader('#loader', {
 
 export const circleLoader = new Loader('#circleLoader', {
     type: 'Circle',
-    color: 'blue', onLoadStateChange: (arg: LoadingState) => {
+    color: 'blue', onLoaderStateChange: (arg: LoadingState) => {
         console.log(arg.loading)
     },
     container: '#circleOverlay'
