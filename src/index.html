@@ -20,14 +20,15 @@
    <code>
    configuration :
    1) supports mutiple instance
-   2) ajax load (or) template load  Ref: loader-config.ts
-   3) if you pass url 'assets/templates/modal.html' it will load using ajax
-   4) if you pass template id 'customer-model' it will load template document to modal
-   5) configuration : new Modal('assets/templates/modal.html', {size: 'lg', onOpen: ()=>{
-       console.log('open');
-     }
-     }}) || new Modal("customer-model", {size: 'lg', })
-   6) onOpen and onClose event support
+   2) interface IOptions {
+    size?: string;
+    type?: 'Circle' | 'Bar' | 'Buffer';
+    mode?: ProgressBarMode;
+    container?: string | HTMLElement;
+    color?: string;
+    onLoadStateChange?: Function;
+   }
+   3) interceptor implementation based on fetch
    </code>
    </pre>
   <hr />
