@@ -2,10 +2,19 @@ import { Loader, LoadingState } from "./loader";
 import { PhotoService } from "./photo.service";
 import './interceptor.service';
 export const loader = new Loader('#loader', {
-    color: '#000', onLoadStateChange: (arg: LoadingState) => {
+    type: 'Bar',
+    color: 'blue', onLoadStateChange: (arg: LoadingState) => {
         console.log(arg.loading)
     },
     container: '.progress-container'
+});
+
+export const circleLoader = new Loader('#circleLoader', {
+    type: 'Circle',
+    color: 'blue', onLoadStateChange: (arg: LoadingState) => {
+        console.log(arg.loading)
+    },
+    container: '#circleOverlay'
 });
 
 (window as any).loadStart = () => {
@@ -16,8 +25,16 @@ export const loader = new Loader('#loader', {
     }, 3000);
 }
 
+
 (window as any).loadEnd = () => {
     loader.end();
+}
+(window as any).loadCEnd = () => {
+    circleLoader.end();
+}
+
+(window as any).loadCStart = () => {
+    circleLoader.start();
 }
 
 const photoService = new PhotoService();

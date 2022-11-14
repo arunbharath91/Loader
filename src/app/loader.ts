@@ -1,6 +1,6 @@
 interface IOptions {
   size?: string;
-  type?: 'Circle' | 'Bar';
+  type?: 'Circle' | 'Bar' | 'Buffer';
   mode?: ProgressBarMode;
   container?: string | HTMLElement;
   color?: string;
@@ -61,6 +61,7 @@ export class Loader {
     if (this.selector) {
       this.selector.setAttribute('progress-mode', this.options?.mode || '');
       this.selector.setAttribute('progress-loading', this.loadingState.loading.toString());
+      this.selector.setAttribute('progress-type', this.options.type || 'Bar');
       if (this.options.color && this.checkValidColor(this.options.color)) {
         this.selector.setAttribute('progress-color', this.options.color);
         this.selector.style.cssText = `--progress-color: ${this.options.color}`;

@@ -33,14 +33,23 @@
   <hr />
   <div class="progress-container">
     <div class="progress-overlay">
-      <div class="progress" id="loader">
-        <div class="bar"></div>
-      </div>
+      <div class="progress" id="loader"></div>
     </div>
   </div>
-  <button type="button" onclick="loadStart()">Start</button>
 
-  <button type="button" onclick="loadEnd()">End</button>
+  <div class="progress-overlay" id="circleOverlay">
+    <div class="progress" id="circleLoader"></div>
+  </div>
+  <div>
+    <button type="button" onclick="loadStart()">Start</button>
+
+    <button type="button" onclick="loadEnd()">End</button>
+  </div>
+  <div>
+    <button type="button" onclick="loadCStart()">StartC</button>
+
+    <button type="button" onclick="loadCEnd()">EndC</button>
+  </div>
 
   <div class="progress" style="--width: 50%">
     <div class="bar"></div>
